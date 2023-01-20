@@ -1,0 +1,28 @@
+<div class="to-do-box">
+  <div class="to-do-first-line">
+    <p>{{ toDo.name }}</p>
+    <div class="to-do-buttons">
+      <button
+        class="btn btn-danger"
+        [ngClass]="{
+          'btn-danger': listType === ListType.TO_DO,
+          'btn-secondary': listType !== ListType.TO_DO
+        }"
+        (click)="onPreviousClick()"
+      >
+        {{ listType === ListType.TO_DO ? "X" : "<" }}
+      </button>
+
+      <button
+        *ngIf="listType !== ListType.DONE"
+        class="btn btn-primary"
+        (click)="onNextClick()"
+      >
+        >
+      </button>
+    </div>
+  </div>
+  <div class="to-do-second-line">
+    <p class="blue-border">{{ toDo.difficulty }}</p>
+  </div>
+</div>

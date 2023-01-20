@@ -1,0 +1,18 @@
+<div class="lists-wrapper container">
+  <app-to-do-form (toDoAdded)="onToDoAdd($event)"></app-to-do-form>
+
+  <div class="todos">
+    <app-to-do-list
+      (toDoNext)="onToDoNext($event, List.TO_DO)"
+      [toDos]="toDos"
+      [listType]="List.TO_DO"
+    ></app-to-do-list>
+    <app-to-do-list
+      (toDoNext)="onToDoNext($event, List.IN_PROGRESS)"
+      (toDoPrevious)="onToDoPrevious($event, List.TO_DO)"
+      [toDos]="inProgresses"
+      [listType]="List.IN_PROGRESS"
+    ></app-to-do-list>
+    <app-to-do-list [toDos]="dones" [listType]="List.DONE"></app-to-do-list>
+  </div>
+</div>

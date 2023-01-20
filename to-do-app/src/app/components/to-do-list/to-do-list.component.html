@@ -1,0 +1,11 @@
+<div class="list-box">
+  <h3 class="title">{{ listType }}</h3>
+  <div *ngFor="let toDo of toDos">
+    <app-to-do
+      [toDo]="toDo"
+      [listType]="listType"
+      (toDoNext)="onToDoNext($event)"
+      (toDoPrevious)="onToDoPrevious($event)"
+    ></app-to-do>
+  </div>
+</div>

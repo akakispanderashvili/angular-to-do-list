@@ -1,0 +1,11 @@
+<form [formGroup]="form" (ngSubmit)="onFormSubmit()">
+  <input placeholder="task" style="margin:5px" type="text" formControlName="name" />
+
+  <select  formControlName="difficulty" style="height:30px;margin:15px">
+    <option *ngFor="let difficulty of difficulties" [value]="difficulty">
+      {{ difficulty }}
+    </option>
+  </select>
+
+  <button  [disabled]="form.invalid" type="submit" class="btn btn-primary">Add</button>
+</form>
